@@ -1,0 +1,359 @@
+/*     DEFAULT STYLE  - DON'T EDIT THIS    */
+
+#myVideo {
+  position: relative;
+  overflow: hidden;
+  width: 70%;
+  height: 0;
+  padding-bottom: 44%;
+  margin: 5%;
+  background: url('http://edge-assets.wirewax.com/creativeData/devChallenge/orca.jpg');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.75);
+}
+
+#myTag {
+  width: 29%;
+  height: 35%;
+  top: 33%;
+  left: 25%; /* Needed to edit this value to shift element over to the left to match the PDF while keeping contents centered within myTag */
+  position: absolute;
+  display: none;
+}
+
+#myOverlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: none;
+}
+
+/*     END DEFAULT STYLE     */
+
+
+/************************************************************************/
+
+/* ANIMATIONS */
+
+/* Tag Fade-in and Fade-out */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* Spinning Plus */
+
+@keyframes plusSpin {
+
+  50% {
+    transform: rotate(180deg) scale(.8);
+  }
+
+  100% {
+    transform: rotate(180deg) scale(1);
+  }
+
+}
+
+/* Modal Slide-in */
+
+@keyframes slideViewImage {
+  0% {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideViewInfo {
+  0% {
+    transform: translateY(-200%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Modal Description Fade-in */
+
+@keyframes fadeInfo {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* End of ANIMATIONS */
+
+/************************************************************************/
+
+
+/* Animation Class Styles */
+
+.show {
+  animation: fadeIn 1s forwards;
+}
+
+.animate-out {
+  animation: fadeOut 1s forwards;
+}
+
+
+/* SVG */
+
+#Layer_1 {
+      box-sizing: border-box;
+      transform: translateX(275%) scale(.4);
+    }
+
+
+/* Tag/Hotspot Alignment Container and Content Styles */
+
+.hotspot {
+  position: relative;
+  width: 65%;
+  height: 25%;
+  top: 37.5%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.hotspot:hover #plus{
+  animation: plusSpin 1s;
+}
+
+#plus {
+  transform-origin: 50% 50%;
+}
+
+.top-text {
+  display: block;
+  position: absolute;
+  top: 10%;
+  left: 16%;
+  margin: 0;
+  font-family: 'Crimson Text', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.2vw;
+  color: #fff;
+  word-spacing: .05vw;
+
+}
+
+.bottom-text {
+  display: block;
+  position: absolute;
+  top:50%;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2vw;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .07vw;
+}
+
+
+/*************************************************************/
+/* Modal Styles */
+
+.modal-container {
+  position: relative;
+  margin: 12% auto 0 auto;
+  width: 70%;
+  height: 63%;
+  z-index: 9999;
+}
+
+.whale-pic {
+  position: absolute;
+  left:0;
+  width: 43%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: translateY(200%);
+  opacity: 0;
+  animation: slideViewImage 2s ease-out forwards;
+}
+
+.whale-pic img {
+  width: 78%;
+  display: block;
+  margin: 25% auto 0 auto;
+}
+
+.whale-info {
+  position: absolute;
+  left: 43%;
+  width: 57%;
+  height: 100%;
+  background-color: #fff;
+  transform: translateY(-200%);
+  opacity: 0;
+  animation: slideViewInfo 2s ease-out forwards;
+}
+
+.close-infoBox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: 'Crimson Text', serif;
+  font-weight: 400;
+  font-style: italic;
+  color: #3D6C96;
+  margin-top: 2%;
+  margin-right: 3%;
+  font-size: .9vw;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeInfo 1s ease-in 2s forwards;
+}
+
+.infoBox {
+  position: relative;
+  display: block;
+  width: 77%;
+  height: 78%;
+  margin: 10% auto 0 auto;
+  opacity: 0;
+  animation: fadeInfo 1s ease-in 2s forwards;
+}
+
+.topBox {
+  width: 72%;
+  box-sizing: border-box;
+}
+
+.info-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2vw;
+  color: #3D6C96; 
+  text-transform: uppercase;
+  letter-spacing: .2vw;
+  transform: scale(1, 1.1);
+  padding-top: 10%;
+  margin-bottom: 0;
+  line-height: 115%
+}
+
+.info-title span {
+  display: block;
+}
+
+.info-species {
+  font-family: 'Crimson Text', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.2vw;
+  color: #3D6C96;
+  margin-top: 5%;
+  margin-bottom: 0;
+}
+
+.info-text {
+  font-size: 1vw;
+  color: #777;
+  margin-top: 4%;
+  margin-bottom: 0;
+  line-height: 150%
+}
+
+.bottomBox {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-right: none;
+  border-left: none;
+  height: 11%;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 1100px) {
+  .bottomBox {
+    border: 2px solid rgba(0, 0, 0, .15);
+    border-right: none;
+    border-left: none;
+  }
+}
+
+.lifespanBox { 
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  padding-left: 2%;
+}
+
+.lengthBox {
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  padding-right: 2%;
+}
+
+.bottomBox-text {
+  margin: 0;
+  padding-top: 6%;
+  font-family: 'Montserrat', sans-serif; 
+  font-size: .8vw;
+  transform: scale(1, 1.1);
+  text-transform: uppercase;
+  color: #3D6C96;
+  letter-spacing: .08vw; 
+}
+
+.length {
+  text-align: right;
+}
+
+.span-colon {
+  font-size: .6vw;
+  color: #777;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.span-description {
+  font-size: .8vw;
+  color: #777;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: normal;
+  text-transform: none;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+

@@ -1,0 +1,14 @@
+{
+  "name": "ww-hotspot-overlay",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anthony Garcia",
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-watch": "^5.0.1"
+  }
+}
