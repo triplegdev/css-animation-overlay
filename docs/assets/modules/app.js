@@ -52,7 +52,7 @@ myModal.append('<div class="whale-info"></div>');
 // Image Container
 
 var myWhaleImage = $('.whale-pic');
-myWhaleImage.append('<img src="./images/killerWhale.png">');
+myWhaleImage.append('<img src="./assets/images/killerWhale.png">');
 
 // Description Container
 
